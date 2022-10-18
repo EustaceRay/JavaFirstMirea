@@ -1,6 +1,5 @@
 package ru.mirea.task1;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class MainTask1 {
