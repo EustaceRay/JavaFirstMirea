@@ -78,7 +78,7 @@ public class MapThis {
         citiesOfSweden.add("Фалун");
         citiesOfSweden.add("Умео");
         cities.put(sweden, citiesOfSweden);
-        // Output
+        // Вывод
         System.out.println("Task2: ");
         System.out.println(cities.toString());
     }

@@ -11,9 +11,8 @@ class task5_2 extends JFrame {
     String animation_images_path = "C:\\Users\\prizm\\Desktop\\Animation";
     int method;
 
-    // Init
     task5_2() {
-        super("Some shapes");
+        super("Фигуры");
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         //setBackground(Color.BLACK);
         setLocation(300, 300);
@@ -24,14 +23,14 @@ class task5_2 extends JFrame {
         this.method = 0;
 
         // Btn "Start animation"
-        Button btn = new Button("Start animation");
+        Button btn = new Button("Запуск анимации");
         btn.setSize(200, 100);
         btn.setLocation(0, 0);
         btn.addActionListener(
                 new ActionListener () {
                     public void actionPerformed(ActionEvent event) {
                         method = 1;
-                        setTitle("Animation");
+                        setTitle("Анимация");
                         setSize(WINDOW_WIDTH + 1, WINDOW_HEIGHT);
                         setSize(WINDOW_WIDTH - 1, WINDOW_HEIGHT);
                     }
@@ -160,7 +159,6 @@ class task5_2 extends JFrame {
         }
     }
 
-    // Start app
     public static void main(String[] args) {
         task5_2 app = new task5_2();
         if (args.length == 1) {

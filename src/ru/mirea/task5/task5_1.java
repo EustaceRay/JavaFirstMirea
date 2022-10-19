@@ -9,7 +9,7 @@ public class task5_1 {
     private static JLabel winnerLabel = new JLabel();
     public static void main(String[] args) {
         task5_1 m = new task5_1();
-        JFrame frame = new JFrame("Match Result");
+        JFrame frame = new JFrame("Результат матча");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 300);
         JPanel mainPanel = new JPanel();
@@ -20,9 +20,9 @@ public class task5_1 {
         mainPanel.setPreferredSize(new Dimension(300, 150));
         frame.getContentPane().add(mainPanel);
 
-        scoreLabel.setText("Result: 0 X 0");
-        winnerLabel.setText("Winner: DRAW");
-        lastScorerLabel.setText("Last Scorer: N/A");
+        scoreLabel.setText("Результат: 0 X 0");
+        winnerLabel.setText("Победитель: НЕЧЬЯ");
+        lastScorerLabel.setText("Последний год: N/A");
         JButton madridBtn = new JButton("Real Madrid");
         madridBtn.addActionListener(e -> incScore(true));
         JButton milanBtn = new JButton("AC Milan");
@@ -51,10 +51,10 @@ public class task5_1 {
         else {
             milanScore++;
         }
-        String winner = (madridScore > milanScore) ? "Real Madrid" : milanScore == madridScore ? "DRAW" : "AC Milan";
-        scoreLabel.setText(String.format("Result: %d X %d", milanScore, madridScore));
-        lastScorerLabel.setText(String.format("Last Scorer: %s", isMadrid ? "Real Madrid" : "AC Milan"));
-        winnerLabel.setText(String.format("Winner: %s", winner));
+        String winner = (madridScore > milanScore) ? "Real Madrid" : milanScore == madridScore ? "НИЧЬЯ" : "AC Milan";
+        scoreLabel.setText(String.format("Результат: %d X %d", milanScore, madridScore));
+        lastScorerLabel.setText(String.format("Последний гол: %s", isMadrid ? "Real Madrid" : "AC Milan"));
+        winnerLabel.setText(String.format("Победитель: %s", winner));
 
     }
 
