@@ -1,215 +1,50 @@
 package ru.mirea.task4;
-import java.io.IOException;
+
 import java.util.Scanner;
 
 public class Seasons {
-
-    public enum Season{;
-        int summer,
-        autumn,
-        winter,
-        spring;
+    enum Season{
+        WINTER(-25), SPRING(7), SUMMER(25), AUTUMN(13);
+        private int temp;
+        Season(int temp) {
+            this.temp = temp;
+        }
+        public int getTemp(){
+            return temp;
+        }
     }
 
-    public static Seasons[] a;
-    String fam;
-    String name;
-
-    public Seasons(String fam, String name){
-        this.fam = fam;
-        this.name = name;
-    }
-
-    public static Seasons[] CreateArray(){
-        Seasons sdt;
-
-        for (int j =0; j < 4; j++){
-            String fam = "";
-            String name = "";
-
-            sdt = new Seasons(fam, name);
-
-            a[j] = sdt;
-            System.out.println();
-        }
-        return a;
-    }
-
-    public static void print(Seasons[] a) {
-
-        a[0].fam = "Температура 45*";
-
-        a[1].fam = "Температура -40*";
-
-        a[2].fam = "Температура 20*";
-
-        a[3].fam = "Температура 13*";
-
-        a[0].name = "Лето — одно из четырёх времён года, между весной и осенью, характеризующееся наиболее высокой температурой окружающей среды.";
-
-        a[1].name = "Зима — одно из четырёх времён года, между периодами годового цикла осенью и весной.";
-
-        a[3].name = "Осень (родственно др.-прусск. assanis — «осень», гот. аsans — «жатва», этимологически — «время жатвы»; по толкованию Даля — от «осенять» — затенять: наступление сумрака)";
-
-        a[2].name = "Весна — одно из четырёх времён года, переходный сезон между зимой и летом";
-
-        for (int i = 0; i < a.length; i++)
-
-        {
-
-            System.out.println("-------------------------------------------------------------------");
-
-            System.out.println(a[i].fam);
-
-            System.out.println(a[i].name);
-
-            System.out.println("-------------------------------------------------------------------");
-
-        }
-
-
-
-        System.out.println();
-
-    }
-
-    public static void main(String[] args) throws IOException {
-
-
-        System.out.println("Ваше любимая пора года?(лето(1),зима(2),осень(3),весна(4))");
-
-        Scanner str = new Scanner(System.in);
-        int s = str.nextInt();
-
-        if (s == 1)
-
-        {
-
-            System.out.print("Лето — одно из четырёх времён года, между весной и осенью, характеризующееся наиболее высокой температурой окружающей среды.");
-
-            System.out.println("В день летнего солнцестояния дни самые длинные, а ночи самые короткие.");
-
-        }
-
-        else if (s == 2)
-
-        {
-
-            System.out.print("Зима — одно из четырёх времён года, между периодами годового цикла осенью и весной.Основной признак этого времени ");
-
-            System.out.println("года — устойчивая низкая температура(ниже 0 градусов по Цельсию) во многих районах Земли, на поверхность земли выпадает и ложится снег.");
-
-        }
-
-        else if (s == 3)
-
-        {
-
-            System.out.print("Осень (родственно др.-прусск. assanis — «осень», гот. аsans — «жатва», этимологически — «время жатвы»; по толкованию Даля — от «осенять» — затенять: наступление сумрака)");
-
-            System.out.println(" — одно из четырёх времен года, между летом и зимой.");
-
-        }
-
-        else if (s == 4)
-
-        {
-
-            System.out.print("Весна — одно из четырёх времён года, переходный сезон между зимой и летом");
-
-            System.out.println(" . Существуют различные методы определения начал и окончания весны, отличающиеся в зависимости от местного климата, культур и обычаев. Когда в Северном полушарии весна, то в Южном полушарии осень и наоборот.");
-
-        }
-
-        else
-
-        {
-
-            System.out.println("Неправильная пора года выхожу!");
-
-            System.in.read();
-
-            System.exit(0);
-
-        }
-
-
-
-        System.out.println("1-лето");
-
-        System.out.println("2-зима");
-
-        System.out.println("3-весна");
-
-        System.out.println("4-осень");
-
-        Scanner foo = new Scanner(System.in);
-        int mb = Integer.valueOf(foo.nextInt());
-
-        TellAboutSeasons(mb);
-
-        System.out.println("Введите лето или зима");
-
-        Scanner see = new Scanner(System.in);
-        int mb1 = see.nextInt();
-
-        getDescription(mb1);
-
-        Seasons[] a;
-
-        a = Seasons.CreateArray();
-
-        a: Seasons.print(a);
-
-        System.in.read();
-
-    }
-
-
-
-    private static void getDescription(int s)
-
-    {
-
-        if (s == 1) System.out.println("Теплое время года");
-
-        else
-
-        if (s == 2) System.out.println("Холодное время года");
-
-    }
-
-    private static void TellAboutSeasons(int mb)
-
-    {
-
-        double sr = 0;
-
-
-        switch (mb)
-
-        {
-
+    public static void main(String[] args) {
+        Season arraySeas[] = Season.values();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter favourite season: 1 - winter, 2 - spring, 3 - summer, 4 - autumn ");
+        int numSeason = in.nextInt();
+        Season season = Season.WINTER;
+        switch (numSeason) {
             case 1:
-
-                sr = 45; System.out.println("Я люблю лето " + sr + "*"); break;
-
-
+                season = Season.WINTER;
+                System.out.println("I love winter");
+                break;
             case 2:
-
-                sr = 13; System.out.println("Я люблю осень " + sr + "*"); break;
-
+                season = Season.SPRING;
+                System.out.println("I love spring");
+                break;
             case 3:
-
-                sr = -40; System.out.println("Я люблю зиму " + sr + "*"); break;
+                season = Season.SUMMER;
+                System.out.println("I love summer");
+                break;
             case 4:
-
-                sr = 20; System.out.println("Я люблю весну " + sr + "*"); break;
-
+                season = Season.AUTUMN;
+                System.out.println("I love autumn");
+                break;
+            default:
+                System.out.println("Incorrect enter. Auto set 'Winter'.");
         }
-
+        System.out.println("temp: " + season.getTemp());
+        System.out.println("All info:");
+        for (int i = 0; i < arraySeas.length; i++){
+            System.out.println(arraySeas[i] + ": " + arraySeas[i].getTemp());
+        }
     }
 
-} 
-
-
+}
