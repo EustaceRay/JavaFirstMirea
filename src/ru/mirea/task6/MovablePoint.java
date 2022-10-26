@@ -3,8 +3,8 @@ package ru.mirea.task6;
 public class MovablePoint implements Movable {
     protected int x;
     protected int y;
-    protected int xSpeed;
-    protected int ySpeed;
+    public int xSpeed;
+    public int ySpeed;
 
     public MovablePoint(int x, int y, int xSpeed, int ySpeed) {
         this.x = x;
